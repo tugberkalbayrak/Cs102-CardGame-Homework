@@ -35,14 +35,16 @@ public class CardGame
       
     }
     
-    // methods
+    
     public boolean playTurn( Player p, Card c)
     {
         if(!isTurnOf(p))
           return false;
 
-        cardsOnTable[turnOfPlayer].addCard(card);
-        player.removeCard(card);
+        cardsOnTable[turnOfPlayer].addTopCard(c);
+        players.update(p, c);
+        
+        player.removeCard(c);
 
         
         turnOfPlayer = (turnOfPlayer + 1) % players.size();
@@ -71,38 +73,42 @@ public class CardGame
         return true;
     }
     
+    
+
+  
+    public int getScore(int playerNumber) {
+        return scoreCard.getScore(playerNumber);
+    }
+
+
+    public String getName(int playerNumber) {
+        return players.get(playerNumber).getName();
+    }
+
+
+    
     public int getRoundNo() {
         return roundNo;
     }
 
-    // Whose turn is it right now?
+   
     public int getTurnOfPlayerNo() {
         return turnOfPlayer;
     }
     
-    public String getName( int playerNumber)
-    {
-        // ToDo
-        return "Not yet implemented";
-    }
+    public Player[] getWinners() {
+   
+    int[] winnerIndices = scoreCard.getWinners();
+
     
-    public int getRoundNo()
-    {
-        // ToDo
-        return -1;
+    Player[] winners = new Player[winnerIndices.length];
+    for (int i = 0; i < winnerIndices.length; i++) {
+        winners[i] = players.get(winnerIndices[i]);
     }
-    
-    public int getTurnOfPlayerNo()
-    {
-        // ToDo
-        return -1;
-    }
-    
-    public Player[] getWinners()
-    {
-        // ToDo
-        return null;
-    }
+
+
+    return winners;
+}
     
     public String showScoreCard()
     {
