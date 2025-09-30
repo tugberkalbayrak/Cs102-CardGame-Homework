@@ -24,12 +24,5 @@ public class Player {
     public Card playCard() {
         return hand.getTopCard(); 
     }
-
-    public int cardsLeft() {
-        return hand.size();
-    }
-
-    public String toString() {
-        return name + " (" + cardsLeft() + " cards left)";
-    }
+    
 }
