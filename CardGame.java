@@ -1,3 +1,5 @@
+//Murat Esendemir
+//Tuğberk Albayrak
 package cardgame;
 
 import java.util.ArrayList;
