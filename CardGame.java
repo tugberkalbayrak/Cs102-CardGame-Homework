@@ -1,4 +1,4 @@
-package cardgame;
+
 
 import java.util.ArrayList;
 
@@ -24,36 +24,46 @@ public class CardGame
         players.add(p3);
         players.add(p4);
         scoreCard = new ScoreCard(players.size());
-        fullPack = new Cards();
+        fullPack = new Cards(true);
+        roundNo = 1;
+        turnOfPlayer = 0;
         fullPack.shuffle();
         cardsOnTable = new Cards[players.size()];
         for (int i = 0; i < cardsOnTable.length; i++) {
-            cardsOnTable[i] = new Cards();
+            players.get(i % players.size()).add(fullPack.getTopCard());
         }
-        roundNo = 1;
-        turnOfPlayer = 0;
-      
     }
     
     
     public boolean playTurn( Player p, Card c)
     {
-        if(!isTurnOf(p))
-          return false;
+        if(isGameOver() || !isTurnOf(p))
+            return false;
 
         cardsOnTable[turnOfPlayer].addTopCard(c);
-        players.update(p, c);
-        
-        player.removeCard(c);
+        turnOfPlayer++;
 
-        
-        turnOfPlayer = (turnOfPlayer + 1) % players.size();
+        if(turnOfPlayer == players.size()){
+            int highestCardValue = Integer.MIN_VALUE;
+            int winner = Integer.MIN_VALUE;
 
-        
-        if (turnOfPlayer == 0) {
-            updateScores();
-            roundNo++;
+
+            for(int i = 0; i < cardsOnTable.length; i++){
+                Card playedCard = cardsOnTable[i].getTopCard();
+
+                if(playedCard.getFaceValue() > highestCardValue){
+                    highestCardValue = playedCard.getFaceValue();
+                    winner = i;
+                }
+
+            }
+
+            scoreCard.update(winner, 1);
+
+            turnOfPlayer = 0;
         }
+        
+        
 
         return true;
 
