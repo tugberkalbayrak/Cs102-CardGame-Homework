@@ -39,10 +39,18 @@ public class CardGameTest
         scores.update( 1, 2);
         System.out.println( "\n" + scores );
         
-        // test Player class
-        // ToDo
-        
+        // test Player class 
+        // Abdullah: Anladığım kadarıyla yazdığımız metotları deniyoruz. Bundan aşağısında bunu yapıyorum.
+        p = new Player("NewProject");
+        p.add(c);
+        c = p.playCard();
+        System.out.println(p.getName());
+
         // test CardGame class too?
+        game = new CardGame(p, p, p, p);
+        game.playTurn(p, c);
+        game.isTurnOf(p);
+        game.isGameOver();
         // Todo
         
         // Once you have all the bits working, complete the MyCardGame program

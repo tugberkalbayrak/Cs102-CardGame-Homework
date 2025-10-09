@@ -4,8 +4,8 @@ import cardgame.*;
 // MyCardGame - provides a menu allowing any of the players to play their card,
 //              an option to see the score card, and one to quit the game at any time.
 //              When the game is over it dislays the winners.
-// author:
-// date:
+// author: Abdullah Ozen
+// date: 09.10.2025
 public class MyCardGame
 {
     public static void main( String[] args)
@@ -97,6 +97,12 @@ public class MyCardGame
         boolean    accepted;
         
         accepted = false;  // ToDo...
+
+        if(!(p.playCard() == null)) {
+            accepted = true;
+            c = p.playCard();
+        game.playTurn(p, c);
+        }
 
         return accepted;
     }
