@@ -10,7 +10,7 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
-        this.hand = new Cards();
+        this.hand = new Cards(false);
     }
 
     public String getName() {
