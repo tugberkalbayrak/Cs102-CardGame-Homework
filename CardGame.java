@@ -75,12 +75,7 @@ public class CardGame
     
     public boolean isGameOver() {
       
-        for (Player player : players) {
-            if (!player.getHand().isEmpty()) {
-                return false;
-            }
-        }
-        return true;
+        return roundNo > 13;
     }
     
     
