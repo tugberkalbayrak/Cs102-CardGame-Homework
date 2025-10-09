@@ -1,4 +1,4 @@
-
+package cardgame;
 
 import java.util.ArrayList;
 
@@ -120,3 +120,4 @@ public class CardGame
         return scoreCard.toString();
     }
 }
+
