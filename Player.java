@@ -1,5 +1,5 @@
-//Tuğberk Albayrak
-//package cardgame;
+//Author: Tuğberk Albayrak
+//Date: 03.10.2025
 
 /**
  * Player - Maintains the name and the cards held by one player.

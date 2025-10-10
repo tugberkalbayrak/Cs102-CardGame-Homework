@@ -1,10 +1,8 @@
-//package cardgame;
-
 import java.util.ArrayList;
 
 // Cardgame
-// author:
-// date:
+// author:Tuğberk Albayrak
+// date: 10.10.2025
 public class CardGame
 {
     // properties

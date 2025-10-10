@@ -1,12 +1,9 @@
-//package cardgame;
 import java.util.Random;
-//Murat Esendemir
-
 // Cards - Maintains a collection of zero or more playing cards.
 //         Provides facilities to create a full pack of 52 cards
 //         and to shuffle the cards.
-// author:
-// date:
+// author: Murat Esendemir
+// date: 03.10.2025
 public class Cards
 {
     final int NOOFCARDSINFULLPACK = 52;

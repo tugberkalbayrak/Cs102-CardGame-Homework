@@ -2,8 +2,8 @@ import java.util.Scanner;
 //import cardgame.*;
 
 // CardGameTest
-// author:
-// date:
+// author: Kaan Emre Öztürk
+// date: 10.10.2025
 public class CardGameTest
 {
     public static void main( String[] args)

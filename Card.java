@@ -1,9 +1,8 @@
-//package cardgame;
 //Murat Esendemir
 
 /**
  * Card - a single playing card
- * @author
+ * @author : Murat Esendemir 
  * @version
  */
 public class Card
