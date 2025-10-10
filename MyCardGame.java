@@ -79,9 +79,11 @@ public class MyCardGame
         } while ( selection != MENU_EXIT && !game.isGameOver());
 
         // display winners...
-        // ToDo ~ game.isGameOver(); ? game.getWinners(); 
-        System.out.println(game.getWinners());
-        
+        // ToDo ~ game.isGameOver(); ? game.getWinners();
+        System.out.println("Game Over! Here is/are the winner(s):");
+        for (int i = 0; i < game.getWinners().length; i++) {
+            System.out.println(game.getWinners()[i].getName());
+        }        
         System.out.println( "\nEnd of MyCardGame\n" );   
     }
 
@@ -97,10 +99,10 @@ public class MyCardGame
         
         accepted = false;  // ToDo...
 
-        if(!(p.playCard() == null)) {
+        if(game.isTurnOf(p)) {
             accepted = true;
             c = p.playCard();
-        game.playTurn(p, c);
+            game.playTurn(p, c);
         }
 
         return accepted;
