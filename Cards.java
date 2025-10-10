@@ -1,4 +1,4 @@
-package cardgame;
+//package cardgame;
 import java.util.Random;
 //Murat Esendemir
 

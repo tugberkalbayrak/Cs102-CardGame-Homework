@@ -1,5 +1,5 @@
 //Tuğberk Albayrak
-package cardgame;
+//package cardgame;
 
 /**
  * Player - Maintains the name and the cards held by one player.

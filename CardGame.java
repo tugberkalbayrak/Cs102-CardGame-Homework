@@ -1,4 +1,4 @@
-package cardgame;
+//package cardgame;
 
 import java.util.ArrayList;
 
@@ -18,6 +18,7 @@ public class CardGame
     // constructors
     public CardGame( Player p1, Player p2, Player p3, Player p4)
     {
+        players = new ArrayList<Player>();
         players.add(p1);
         players.add(p2);
         players.add(p3);
@@ -28,8 +29,11 @@ public class CardGame
         turnOfPlayer = 0;
         fullPack.shuffle();
         cardsOnTable = new Cards[players.size()];
-        for (int i = 0; i < cardsOnTable.length; i++) {
+        for (int i = 0; i < 52; i++) {
             players.get(i % players.size()).add(fullPack.getTopCard());
+        }
+        for (int i = 0; i < players.size(); i++) {
+            cardsOnTable[i] = new Cards(false);
         }
     }
     
@@ -43,6 +47,7 @@ public class CardGame
         turnOfPlayer++;
 
         if(turnOfPlayer == players.size()){
+            roundNo++;
             int highestCardValue = Integer.MIN_VALUE;
             int winner = Integer.MIN_VALUE;
 

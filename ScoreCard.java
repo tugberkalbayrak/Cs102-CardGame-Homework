@@ -1,5 +1,5 @@
 //Tuğberk Albayrak
-package cardgame;
+//package cardgame;
 
 /**
  * ScoreCard - Maintains the scores for a set of players.

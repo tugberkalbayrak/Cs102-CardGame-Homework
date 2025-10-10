@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import cardgame.*;
+//import cardgame.*;
 
 // MyCardGame - provides a menu allowing any of the players to play their card,
 //              an option to see the score card, and one to quit the game at any time.
@@ -71,17 +71,16 @@ public class MyCardGame
                 play( p4, game);
             
             else if ( selection == MENU_SCORES )
-                // ToDo ~ System.out.println( game.showScoreCard() );
-                System.out.println( "ToDo..." );
+                System.out.println(game.showScoreCard());
             
             else if ( selection != MENU_EXIT)
                 System.out.println( "Invalid selection! \n" );
             
-        } while ( selection != MENU_EXIT);
+        } while ( selection != MENU_EXIT && !game.isGameOver());
 
         // display winners...
         // ToDo ~ game.isGameOver(); ? game.getWinners(); 
-        System.out.println( "ToDo..." );
+        System.out.println(game.getWinners());
         
         System.out.println( "\nEnd of MyCardGame\n" );   
     }

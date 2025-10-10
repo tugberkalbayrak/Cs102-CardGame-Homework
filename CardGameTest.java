@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import cardgame.*;
+//import cardgame.*;
 
 // CardGameTest
 // author:
